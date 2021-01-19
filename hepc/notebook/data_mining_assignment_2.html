@@ -14803,14 +14803,14 @@ Registered S3 method overwritten by &#39;quantmod&#39;:
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="n">classifier</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+<div class=" highlight hl-r"><pre><span></span><span class="n">classifie1r.all</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
                   <span class="n">data</span><span class="o">=</span><span class="n">train.1</span><span class="p">,</span>
                   <span class="n">type</span><span class="o">=</span><span class="s">&#39;C-classification&#39;</span><span class="p">,</span>
                   <span class="n">kernel</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">,</span>
                   <span class="n">cross</span><span class="o">=</span><span class="m">5</span>
                  <span class="p">)</span>
 
-<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier.all</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
 <span class="n">cm</span> <span class="o">&lt;-</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">valid</span><span class="p">[,</span> <span class="s">&#39;general_category&#39;</span><span class="p">],</span> <span class="n">positive</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
 <span class="n">cm</span>
 <span class="nf">draw_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -15094,14 +15094,14 @@ rkJggg=="
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="n">classifier</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+<div class=" highlight hl-r"><pre><span></span><span class="n">classifier.selected</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
                   <span class="n">data</span><span class="o">=</span><span class="n">train.2</span><span class="p">,</span>
                   <span class="n">type</span><span class="o">=</span><span class="s">&#39;C-classification&#39;</span><span class="p">,</span>
                   <span class="n">kernel</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">,</span>
                   <span class="n">cross</span><span class="o">=</span><span class="m">5</span>
                  <span class="p">)</span>
 
-<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier.selected</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
 <span class="n">cm</span> <span class="o">&lt;-</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">valid</span><span class="p">[,</span> <span class="s">&#39;general_category&#39;</span><span class="p">],</span> <span class="n">positive</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
 <span class="n">cm</span>
 <span class="nf">draw_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -15696,7 +15696,7 @@ kAADhAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAADhAQYICTAACEBBggJMEBIgAFCAgz8fwKX
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="n">classifier1.cost.1000</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+<div class=" highlight hl-r"><pre><span></span><span class="n">classifier2.1.cost.1000</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
                             <span class="n">data</span><span class="o">=</span><span class="n">train.2</span><span class="p">,</span>
                             <span class="n">type</span><span class="o">=</span><span class="s">&#39;C-classification&#39;</span><span class="p">,</span>
                             <span class="n">kernel</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">,</span>
@@ -15705,7 +15705,7 @@ kAADhAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAADhAQYICTAACEBBggJMEBIgAFCAgz8fwKX
                             <span class="n">cost</span><span class="o">=</span><span class="m">1000</span>
                            <span class="p">)</span>
 
-<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier1.cost.1000</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier2.1.cost.1000</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
 <span class="n">cm</span> <span class="o">&lt;-</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">valid</span><span class="p">[,</span> <span class="s">&#39;general_category&#39;</span><span class="p">],</span> <span class="n">positive</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
 <span class="n">cm</span>
 <span class="nf">draw_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -16568,7 +16568,7 @@ AQYICTBASIABQgIMEBJggJAAA4QEGCAkwAAhAQb+H/7ZhQO2GDICAAAAAElFTkSuQmCC"
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="n">classifier3.cost.1000</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+<div class=" highlight hl-r"><pre><span></span><span class="n">classifier2.3.cost.1000</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
                              <span class="n">data</span><span class="o">=</span><span class="n">train.2</span><span class="p">,</span>
                              <span class="n">type</span><span class="o">=</span><span class="s">&#39;C-classification&#39;</span><span class="p">,</span>
                              <span class="n">kernel</span><span class="o">=</span><span class="s">&#39;polynomial&#39;</span><span class="p">,</span>
@@ -16577,7 +16577,7 @@ AQYICTBASIABQgIMEBJggJAAA4QEGCAkwAAhAQb+H/7ZhQO2GDICAAAAAElFTkSuQmCC"
                              <span class="n">C</span><span class="o">=</span><span class="m">1000</span>
                             <span class="p">)</span>
 
-<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier3.cost.1000</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier2.3.cost.1000</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
 <span class="n">cm</span> <span class="o">&lt;-</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">valid</span><span class="p">[,</span> <span class="s">&#39;general_category&#39;</span><span class="p">],</span> <span class="n">positive</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
 <span class="n">cm</span>
 <span class="nf">draw_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -17436,11 +17436,6 @@ QgjmlQm0nAAAAABJRU5ErkJggg=="
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="ROSE">ROSE<a class="anchor-link" href="#ROSE">&#182;</a></h1>
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Selected-Feaatures-&amp;-Class-Weights">Selected Feaatures &amp; Class Weights<a class="anchor-link" href="#Selected-Feaatures-&amp;-Class-Weights">&#182;</a></h2>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -17461,14 +17456,14 @@ QgjmlQm0nAAAAABJRU5ErkJggg=="
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="n">classifier3.1</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+<div class=" highlight hl-r"><pre><span></span><span class="n">classifier3.1.no_weights</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
                    <span class="n">data</span><span class="o">=</span><span class="n">train.3</span><span class="p">,</span>
                    <span class="n">type</span><span class="o">=</span><span class="s">&#39;C-classification&#39;</span><span class="p">,</span>
                    <span class="n">kernel</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">,</span>
                    <span class="n">cross</span><span class="o">=</span><span class="m">5</span>
                   <span class="p">)</span>
 
-<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier3.1</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier3.1.no_weights</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
 <span class="n">cm</span> <span class="o">&lt;-</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">valid</span><span class="p">[,</span> <span class="s">&#39;general_category&#39;</span><span class="p">],</span> <span class="n">positive</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
 <span class="n">cm</span>
 <span class="nf">draw_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -17738,6 +17733,11 @@ kAADhAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAAD/w/66QUlGzs1HQAAAABJRU5ErkJggg=="
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Selected-Feaatures-&amp;-Class-Weights">Selected Feaatures &amp; Class Weights<a class="anchor-link" href="#Selected-Feaatures-&amp;-Class-Weights">&#182;</a></h2>
+</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -19245,25 +19245,20 @@ kAADhAQYICTAACEBBggJMEBIgAFCAgwQEmCAkAADhAQYICTAACEBBggJMEBIgAFCAgwQEmDg
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="SMOTE">SMOTE<a class="anchor-link" href="#SMOTE">&#182;</a></h1>
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Class-Weights">Class Weights<a class="anchor-link" href="#Class-Weights">&#182;</a></h2>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="n">classifier4.1</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+<div class=" highlight hl-r"><pre><span></span><span class="n">classifier4.1.no_weights</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
                    <span class="n">data</span><span class="o">=</span><span class="n">train.4</span><span class="p">,</span>
                    <span class="n">type</span><span class="o">=</span><span class="s">&#39;C-classification&#39;</span><span class="p">,</span>
                    <span class="n">kernel</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">,</span>
                    <span class="n">cross</span><span class="o">=</span><span class="m">5</span>
                   <span class="p">)</span>
 
-<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier4.1</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier4.1.no_weights</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
 <span class="n">cm</span> <span class="o">&lt;-</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">valid</span><span class="p">[,</span> <span class="s">&#39;general_category&#39;</span><span class="p">],</span> <span class="n">positive</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
 <span class="n">cm</span>
 <span class="nf">draw_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -19534,6 +19529,11 @@ MEBIgAFCAgwQEmCAkAADhAQYICTAACEBBggJMPD/V19mdhSgDgYAAAAASUVORK5CYII="
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Class-Weights">Class Weights<a class="anchor-link" href="#Class-Weights">&#182;</a></h2>
+</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -20171,7 +20171,7 @@ RU5ErkJggg=="
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="n">classifier4.4</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+<div class=" highlight hl-r"><pre><span></span><span class="n">classifier4.3</span> <span class="o">&lt;-</span> <span class="nf">svm</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span> <span class="n">general_category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
                    <span class="n">data</span><span class="o">=</span><span class="n">train.4</span><span class="p">,</span>
                    <span class="n">type</span><span class="o">=</span><span class="s">&#39;C-classification&#39;</span><span class="p">,</span>
                    <span class="n">kernel</span><span class="o">=</span><span class="s">&#39;polynomial&#39;</span><span class="p">,</span>
@@ -20180,7 +20180,7 @@ RU5ErkJggg=="
                    <span class="n">class.weights</span><span class="o">=</span><span class="n">weights</span>
                   <span class="p">)</span>
 
-<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier4.4</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">classifier4.3</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
 <span class="n">cm</span> <span class="o">&lt;-</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">valid</span><span class="p">[,</span> <span class="s">&#39;general_category&#39;</span><span class="p">],</span> <span class="n">positive</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
 <span class="n">cm</span>
 <span class="nf">draw_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
