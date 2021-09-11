@@ -1,5 +1,5 @@
 # Description
-This proejct is to find the top 5 obvious patterns from the [US Traffic 2015 Dataset](https://www.kaggle.com/jboysen/us-traffic-2015)
+This project is to find the top 5 obvious patterns from the [US Traffic 2015 Dataset](https://www.kaggle.com/jboysen/us-traffic-2015)
 
 # Guide
 1. Activate your anaconda prompt or open up your terminal
@@ -19,9 +19,9 @@ traffic_flow_us_2015
 |-- dot_traffic_stations_2015.txt.gz
 |- requirements.txt
 ```
-4. Open your jupyter notebook
+4. Run your jupyter notebook
 ```bash
 jupyter notebook
 ```
 
-5. Open 01-EDA-01 Exploration.ipynb to view the complete analysis.
+5. Run 01-EDA-01 Exploration.ipynb to view the complete analysis.
