@@ -4,7 +4,7 @@ This project is to find the top 5 obvious patterns from the [US Traffic 2015 Dat
 # Guide
 1. Activate your anaconda prompt or open up your terminal
 2. Change directory to this file
-3. Create conda environment with following command
+3. Create conda environment with following command (change <env> accordingly)
 ```bash
 conda create --name <env> --file requirements.txt
 ```
@@ -19,9 +19,10 @@ traffic_flow_us_2015
 |-- dot_traffic_stations_2015.txt.gz
 |- requirements.txt
 ```
-4. Run your jupyter notebook
+5. Activate your environment and run your jupyter notebook
 ```bash
+conda activate <env>
 jupyter notebook
 ```
 
-5. Run 01-EDA-01 Exploration.ipynb to view the complete analysis.
+6. Run 01-EDA-01 Exploration.ipynb to view the complete analysis.
