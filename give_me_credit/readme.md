@@ -13,7 +13,7 @@ Objective here is to predict serious delinquency in 2 years (person experienced 
 │   ├── 01_EDA.ipynb
 │   ├── 02_missing_value_importance.ipynb
 │   ├── 03_baseline_model.ipynb
-│   ├── 04_xgboost_model.ipynb
+│   ├── 04_xgboost_model.ipynb (WIP)
 ├── output
 │   ├── 01-EDA-train-diff.html
 │   ├── 01-EDA-train.html
