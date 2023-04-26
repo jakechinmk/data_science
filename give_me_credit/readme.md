@@ -122,7 +122,8 @@ The questions are revolving around few factors
     - median for monthly income and number of dependent
     - impute by age group generate the monthly income median
   - Transformation of numerical continuous variable (not recommended if we are not using linear model)
-- Geenerate features
+- Using a different feature selection method
+- Generate features
   - The remaining balance after deducting all the commitments
   - Income per dependents
 - Try on other model methods
@@ -130,6 +131,7 @@ The questions are revolving around few factors
   - Ensemble
 - Model Evaluation
   - Focus on recall metric (since we would not want to have more bad payers as the loan amount loss is higher than the profit gained)
+- Model Explanability (scorecard or SHAP value)
 
 
 
