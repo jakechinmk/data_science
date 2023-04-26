@@ -85,7 +85,7 @@ The questions are revolving around few factors
 ## Methodology
 - Using a relatively traditional method to understand which variable is important and how the missing values / outlier impacting the model using [optbinning](http://gnpalencia.org/optbinning/index.html)
 - This library will automatically bin the variables into different groups (instead of we doing the coarse classing method manually by looking at WoE or IV)
-- Feature selection based on information value
+- Feature selection based on [information value](https://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html)
 - Baseline Model using a simple Logistic Regression Model
 - XGBoost Model
 
@@ -149,6 +149,20 @@ The questions are revolving around few factors
       - High Risk (bin 9, within 45%) - lower loan amount, higher interest rate, shorter tenure
       - Rejected (bin 10) - since it fell into the discrimination threshold (0.76)
   - XGBoost
+    - Important Features
+      - age
+      - revolving_utilization_of_unsecured_lines
+      - debt_ratio
+      - monthly_income
+      - number_of_open_credit_lines_and_loans (not present in Logistic Regression model, suspect they has a better split)
+      - revolving_utilization_of_unsecured_lines_impute
+      - number_of_time_30_59_days_past_due_not_worse
+      - debt_ratio_impute
+      - monthly_income_max
+      - number_of_times_90_days_late
+      - number_real_estate_loans_or_lines
+      - number_of_time_60_89_days_past_due_not_worse
+      - number_of_dependents
     - Training Data suggested the threshold to be 0.47, which we will have our maximum KS (54.88%)
     - Based on threshold = 0.51
       - We can cover 70-80% of the training dataset, and only having 15% (23%) to 25% (32%) of the bad payer of total bad payer in the population.
@@ -176,7 +190,6 @@ The questions are revolving around few factors
   - The remaining balance after deducting all the commitments
   - Income per dependents
 - Try on other model methods
-  - XGboost (WIP)
   - Ensemble
 - Model Evaluation
   - Focus on recall metric (since we would not want to have more bad payers as the loan amount loss is higher than the profit gained)
