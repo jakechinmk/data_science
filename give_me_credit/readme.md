@@ -13,7 +13,9 @@ Objective here is to predict serious delinquency in 2 years (person experienced 
 │   ├── 01_EDA.ipynb
 │   ├── 02_missing_value_importance.ipynb
 │   ├── 03_baseline_model.ipynb
-│   ├── 04_xgboost_model.ipynb (WIP)
+│   ├── 04_feature_engineering_lr_model.ipynb
+│   ├── 05_xgboost_baseline_01.ipynb
+│   ├── 05_xgboost_model_02.ipynb
 ├── output
 │   ├── 01-EDA-train-diff.html
 │   ├── 01-EDA-train.html
@@ -85,6 +87,7 @@ The questions are revolving around few factors
 - This library will automatically bin the variables into different groups (instead of we doing the coarse classing method manually by looking at WoE or IV)
 - Feature selection based on information value
 - Baseline Model using a simple Logistic Regression Model
+- XGBoost Model
 
 ## Result (Baseline)
 - The feature selected
@@ -108,10 +111,56 @@ The questions are revolving around few factors
     - We can cover 70-80% of the training dataset, and only having 23% to 32% of the bad payer of total bad payer in the population.
     - We also can cover 70-80% of the test dataset, and only having 21% to 30% of the bad payer. The model is considerably stable.
 - Strategy Suggested
-  - Lowest Risk (bin 1-3) - higher loan amount, lower interest rate, longer tenure
-  - Moderate Risk (bin 4-8) - original loan amount, original interest rate, original tenure
-  - High Risk (bin 9) - lower loan amount, higher interest rate, shortere tenure
+  - Lowest Risk (bin 1-3, within 5%) - higher loan amount, lower interest rate, longer tenure
+  - Moderate Risk (bin 4-8, within 30%) - original loan amount, original interest rate, original tenure
+  - High Risk (bin 9, within 46%) - lower loan amount, higher interest rate, shorter tenure
   - Rejected (bin 10) - since it fell into the discrimination threshold (0.76)
+
+## Result (Best Model)
+- Depending on the production and business needs,
+  - two model are chosen in notebook
+    - 04-feature_engineering_lr_model
+    - 05_xgboost_baseline_01
+  - the extra feature engineering that handlde 3 variable
+    - monthly_income
+    - debt_ratio
+    - revolving_utilization_of_unsecured_lines
+- Model Performance
+  - Improve the model AUC from 0.84 (Baseline) to 0.85(LR) and 0.87 (XGBoost)
+  - CV Recall around 0.72 (LR) and 0.75 (XGBoost)
+- Bucket Evaluation
+  - LR
+    - Feature Selected
+      - number_of_time_30_59_days_past_due_not_worse, number_of_time_60_89_days_past_due_not_worse, number_of_times_90_days_late
+      - revolving_utilization_of_unsecured_lines_impute
+      - age
+      - debt_ratio & debt_ratio_impute
+      - monthly_income & monthly_income_max
+      - number_of_dependents
+      - number_real_estate_loans_or_lines
+    - Training Data suggested the threshold to be 0.47, which we will have our maximum KS (54.88%)
+    - Based on threshold = 0.47
+      - We can cover 70-80% of the training dataset, and only having 19% (23%) to 30% (32%) of the bad payer of total bad payer in the population.
+      - We also can cover 70-80% of the test dataset, and only having 17% (21%) to 27% (30%) of the bad payer. The model is considerably stable.
+      - The model is better than baseline in general by slightly.
+    - Strategy Suggested
+      - Lowest Risk (bin 1-4, within 5%) - higher loan amount, lower interest rate, longer tenure
+      - Moderate Risk (bin 5-8, within 30%) - original loan amount, original interest rate, original tenure
+      - High Risk (bin 9, within 45%) - lower loan amount, higher interest rate, shorter tenure
+      - Rejected (bin 10) - since it fell into the discrimination threshold (0.76)
+  - XGBoost
+    - Training Data suggested the threshold to be 0.47, which we will have our maximum KS (54.88%)
+    - Based on threshold = 0.51
+      - We can cover 70-80% of the training dataset, and only having 15% (23%) to 25% (32%) of the bad payer of total bad payer in the population.
+      - We also can cover 70-80% of the test dataset, and only having 15% (21%) to 25% (30%) of the bad payer. The model is considerably stable.
+      - The model is better than baseline in general
+    - Strategy Suggested
+      - Lowest Risk (bin 1-5, within 5%) - higher loan amount, lower interest rate, longer tenure
+      - Moderate Risk (bin 5-8, within 25%) - original loan amount, original interest rate, original tenure
+      - High Risk (bin 9, within 43%) - lower loan amount, higher interest rate, shorter tenure
+      - Rejected (bin 10) - since it fell into the discrimination threshold (0.76)
+ - For better recall and performance, it will be good to go for XGBoost model.
+ - For simple and easier to monitor, it will be good to go for Logistic Regression model.
 
 ## Future Work
 - Ensure data quality (with check script)
