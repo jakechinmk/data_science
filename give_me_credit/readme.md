@@ -22,8 +22,21 @@ Objective here is to predict serious delinquency in 2 years (person experienced 
 │   ├── 01-EDA-valid.html
 │   ├── 03-baseline_model-pipeline.pkl
 │   ├── 03-baseline_model-test_df.csv
+│   ├── 03-baseline_model-train_df.csv
+│   ├── 04-feature_engineering_lr_model-pipeline.pkl
+│   ├── 04-feature_engineering_lr_model-test_df_cat.csv
+│   ├── 04-feature_engineering_lr_model-train_df_cat.csv
+│   ├── 04-feature_engineering_lr_model-valid_df_cat.csv
+│   ├── 04-feature_engineering_lr_model-test_df.csv
+│   ├── 04-feature_engineering_lr_model-train_df.csv
+│   ├── 04-feature_engineering_lr_model-valid_df.csv
+│   ├── 05-xgboost_baseline_01-pipeline.pkl
+│   ├── 05-xgboost_model_02-pipeline.pkl
+│   ├── test_df_1.csv
+│   ├── train_df_1.csv
 │   ├── train_df.csv
-│   ├── train_df1.csv
+│   ├── train_df.csv
+│   ├── valid_df.csv
 │   ├── readme.md
 ```
 
@@ -120,7 +133,7 @@ The questions are revolving around few factors
 - Depending on the production and business needs,
   - two model are chosen in notebook
     - 04-feature_engineering_lr_model
-    - 05_xgboost_baseline_01
+    - 05-xgboost_baseline_01
   - the extra feature engineering that handlde 3 variable
     - monthly_income
     - debt_ratio
