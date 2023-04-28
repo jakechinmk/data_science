@@ -45,19 +45,19 @@ Objective here is to predict serious delinquency in 2 years (person experienced 
 - Features
   - Gauge financial literacy
     - age
-- Gauge ability to repay debt
-  - Lending Capability
-    - number_of_open_credit_lines_and_loans (installment and credit cards)
-    - number_real_estate_loans_or_lines (mortgage and real estate loans - secured loans kind of)
-    - revolving_utilization_of_unsecured_lines (total balance on credit cards and personal lines of credit divided by sum of credit lines)
-  - Family Commitment
-    - number_of_dependents
-    - monthly_income
-    - debt_ratio
-  - Historical performance of repaying debts
-    - number_of_time_30_59_days_past_due_not_worse
-    - number_of_time_60_89_days_past_due_not_worse
-    - number_of_times_90_days_late
+  - Gauge ability to repay debt
+    - Lending Capability
+      - number_of_open_credit_lines_and_loans (installment and credit cards)
+      - number_real_estate_loans_or_lines (mortgage and real estate loans - secured loans kind of)
+      - revolving_utilization_of_unsecured_lines (total balance on credit cards and personal lines of credit divided by sum of credit lines)
+    - Family Commitment
+      - number_of_dependents
+      - monthly_income
+      - debt_ratio
+    - Historical performance of repaying debts
+      - number_of_time_30_59_days_past_due_not_worse
+      - number_of_time_60_89_days_past_due_not_worse
+      - number_of_times_90_days_late
 
 
 ## Key Information Needed
